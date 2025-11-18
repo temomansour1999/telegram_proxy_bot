@@ -2,12 +2,13 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler, MessageHandler, filters
 import logging
 from datetime import datetime
+import os
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-TOKEN = "8510059838:AAERI_PwUx03Aj2XjxBwuJqvYLPRX1Y49ms"
+TOKEN = os.getenv("TOKEN")
 ADMIN_ID = 6434820732  # Your admin ID
 
 # Proxy data storage
@@ -702,4 +703,5 @@ def main():
     application.run_polling()
 
 if __name__ == '__main__':
+
     main()
